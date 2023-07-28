@@ -16,12 +16,12 @@ const eqArrays = function(array1, array2) {
 };
 
 // FUNCTION IMPLEMENTATION
-const assertArraysEqual = function(array1, array2) {
-const result = eqArrays(array1, array2);
+const assertArraysEqual = function(actual, expected) {
+  const result = eqArrays(actual, expected);
   if (result === true) {
-    console.log(`true, ${array1} === ${array2}`)
+    console.log(`true, ${actual} === ${expected}`);
   } else {
-    console.log(`false, ${array1} !== ${array2}`)
+    console.log(`false, ${actual} !== ${expected}`);
   }
 };
 
@@ -37,7 +37,7 @@ const middle = function(array) {
     newArray.push(array[Math.floor(array.length / 2)]);
   }
   return newArray;
-}
+};
 // TEST CODE
 assertArraysEqual(middle([1]), []); // => []
 assertArraysEqual(middle([1, 2]), []); // => []
