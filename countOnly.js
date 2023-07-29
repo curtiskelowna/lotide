@@ -5,35 +5,25 @@ const assertEqual = function(actual, expected) {
   } else {
     console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
   }
-
 };
 
-// FUNCTION IMPLEMENTATION
 const countOnly = function(allItems, itemsToCount) {
-  // create an empty object to store the results
-  const results = {};
-  // loop through the itemsToCount object
-  for (const item in itemsToCount) {
-    // if the item is truthy
-    if (itemsToCount[item]) {
-      // loop through the allItems array
-      for (const element of allItems) {
-        // if the element is the same as the item
-        if (element === item) {
-          // if the item is already in the results object
-          if (results[item]) {
-            // increment the count
-            results[item] += 1;
-          } else {
-            // add the item to the results object with a count of 1
-            results[item] = 1;
-          }
-        }
-      }
+  const result = {};
+  for (const item of allItems) {
+
+   if (!itemsToCount[item]) {
+    continue;
+   }
+
+    if (!result[item]) {
+      result[item] = 0;
     }
+    
+    result[item]++;
   }
-  // return the results object
-  return results;
+
+  return result;
+
 };
 
 // TEST CODE
@@ -56,3 +46,31 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+// // FUNCTION IMPLEMENTATION
+// const countOnly = function(allItems, itemsToCount) {
+//   // create an empty object to store the results
+//   const results = {};
+//   // loop through the itemsToCount object
+//   for (const item in itemsToCount) {
+//     // if the item is truthy
+//     if (itemsToCount[item]) {
+//       // loop through the allItems array
+//       for (const element of allItems) {
+//         // if the element is the same as the item
+//         if (element === item) {
+//           // if the item is already in the results object
+//           if (results[item]) {
+//             // increment the count
+//             results[item] += 1;
+//           } else {
+//             // add the item to the results object with a count of 1
+//             results[item] = 1;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   // return the results object
+//   return results;
+// };
