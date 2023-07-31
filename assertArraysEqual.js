@@ -1,19 +1,4 @@
-// FUNCTION IMPLEMENTATION
-const eqArrays = function(array1, array2) {
-  // if the arrays are not the same length, return false
-  if (array1.length !== array2.length) {
-    return false;
-  }
-  // loop through the arrays assuming they are the same length
-  for (let i = 0; i < array1.length; i++) {
-    // if the elements are not the same, return false
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  // if the elements are the same, return true
-  return true;
-};
+const eqArrays = require('./eqArrays');
 
 // FUNCTION IMPLEMENTATION
 const assertArraysEqual = function(actual, expected) {
@@ -25,8 +10,4 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-// TEST CODE
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
+module.exports = assertArraysEqual;
