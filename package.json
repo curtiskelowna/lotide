@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@curtiskelowna/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "curtisplattlotide",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/curtiskelowna/lotide.git"
   },
-  "author": "",
+  "author": "cmp",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/curtiskelowna/lotide/issues"
